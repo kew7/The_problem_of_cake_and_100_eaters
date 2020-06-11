@@ -15,14 +15,15 @@
 
 #include <iostream>
 #include <math.h>
+#include <array>
 using namespace std;
 
 // вычисление факториала
 long double fact(int N)
 {
-    if (N < 0) // если отрицательное число
+    if (N < 0) // если пользователь ввел отрицательное число
         return 0; // возвращаем ноль
-    if (N == 0) // если ноль,
+    if (N == 0) // если пользователь ввел ноль,
         return 1; // возвращаем факториал от нуля - не удивляетесь, но это 1 =)
     else // Во всех остальных случаях
         return N * fact(N - 1); // делаем рекурсию.
@@ -30,9 +31,11 @@ long double fact(int N)
 
 int main()
 {
-    double A[100],
+    double 
         Amax = 0;
     int imax = 0;
+ 
+    std::array<double, 100> A;      // the massive of eaters
 
     // Function formula
     for (int i = 1; i <= 100; i++)
